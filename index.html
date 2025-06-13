@@ -30,16 +30,29 @@
     }
     .section {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
     }
-    .project, .game {
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .game-card {
       background-color: #1e1e1e;
       padding: 1rem;
       border-radius: 8px;
-      margin-bottom: 1.5rem;
+      text-align: center;
+      cursor: pointer;
     }
-    .project img, .game img {
+    .game-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    .project img {
       width: 100%;
       border-radius: 8px;
       margin-top: 1rem;
@@ -51,14 +64,18 @@
     a:hover {
       text-decoration: underline;
     }
-    details {
-      margin-bottom: 1.5rem;
+    #more-games {
+      display: none;
     }
-    summary {
-      font-weight: 600;
-      font-size: 1.1rem;
+    .show-more-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      color: #90caf9;
       cursor: pointer;
-      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -71,70 +88,59 @@
 
   <section class="section">
     <h2>About Me</h2>
-    <p>I'm a Unity developer with 7+ years of experience building interactive solutions — from casual mobile games to immersive AR/VR applications. I started my career creating and publishing over 20 Android games, and I continue to be deeply passionate about gaming. In recent years, my focus has expanded to developing AR/VR solutions for industries, including product showcases, virtual collaboration, and immersive meeting environments.</p>
-    <p><a href="https://drive.google.com/file/d/1r22TRk8XMXRfY-zvsr31zhpH6ImZZZVu/view?usp=sharing" target="_blank">📄 Download Resume (PDF)</a></p>
+    <p>I'm a Unity developer with 7+ years of experience building interactive solutions — from casual mobile games to immersive AR/VR/MR applications. I started my career creating and publishing over 20 Android games, and I continue to be deeply passionate about gaming. In recent years, my focus has expanded to developing XR solutions for industries, including product showcases, remote collaboration, and virtual training.</p>
+    <p><a href="https://drive.google.com/file/d/1hZ9kG2oqgdGyyNd7oNslg6lAc_5aMnH0/view?usp=sharing" target="_blank">📄 Download Resume (PDF)</a></p>
   </section>
 
   <section class="section">
     <h2>Games</h2>
-
-    <details>
-      <summary>🕹️ Casual & Runner Games</summary>
-      <div class="game">
-        <h3>Ball Jumping</h3>
-        <p>Endless vertical jumper with increasing difficulty and responsive touch controls.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.wrooom68.balljumping" target="_blank">Play on Google Play</a>
-        <img src="images/ball-jumping.jpg" alt="Ball Jumping Screenshot">
-      </div>
-      <div class="game">
+    <div class="game-grid">
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.justhunting')">
+        <img src="images/just-hunting.gif" alt="Just Hunting">
         <h3>Just Hunting</h3>
-        <p>First-person animal hunting experience with different environments and weapons.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.wrooom68.justhunting" target="_blank">Play on Google Play</a>
-        <img src="images/just-hunting.jpg" alt="Just Hunting Screenshot">
       </div>
-    </details>
-
-    <details>
-      <summary>🎯 Educational Games</summary>
-      <div class="game">
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.balljumping')">
+        <img src="images/ball-jumping.gif" alt="Ball Jumping">
+        <h3>Ball Jumping</h3>
+      </div>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.learnspelling')">
+        <img src="images/spelling-shooter.gif" alt="Spelling Shooter">
         <h3>Spelling Shooter</h3>
-        <p>Shoot down letters in the correct order to complete words and improve vocabulary.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.wrooom68.learnspelling" target="_blank">Play on Google Play</a>
-        <img src="images/spelling-shooter.jpg" alt="Spelling Shooter Screenshot">
       </div>
-    </details>
-
-    <details>
-      <summary>🚗 Simulator & Adventure</summary>
-      <div class="game">
-        <h3>4x4 Off Road Monster Truck</h3>
-        <p>Drive powerful trucks across rugged terrains in an off-road adventure.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.glulengames.mountainoffroadmonstertruck" target="_blank">Play on Google Play</a>
-        <img src="images/monster-truck.jpg" alt="Monster Truck Screenshot">
+    </div>
+    <div id="more-games">
+      <div class="game-grid">
+        <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.mountainoffroadmonstertruck')">
+          <img src="images/monster-truck.gif" alt="Monster Truck">
+          <h3>4x4 Monster Truck</h3>
+        </div>
+        <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.wolfquestsimulatorgame')">
+          <img src="images/wolf-quest.gif" alt="Wolf Quest">
+          <h3>Wolf Quest Simulator</h3>
+        </div>
+        <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.lionquestsimulator')">
+          <img src="images/lion-quest.gif" alt="Lion Quest">
+          <h3>Lion Quest Simulator</h3>
+        </div>
       </div>
-      <div class="game">
-        <h3>Wolf Quest Simulator</h3>
-        <p>Experience life as a wild wolf — hunt, survive, and raise your pack.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.glulengames.wolfquestsimulatorgame" target="_blank">Play on Google Play</a>
-        <img src="images/wolf-quest.jpg" alt="Wolf Quest Screenshot">
-      </div>
-    </details>
+    </div>
+    <button class="show-more-btn" onclick="document.getElementById('more-games').style.display='block'; this.style.display='none';">Show More</button>
   </section>
 
   <section class="section">
-    <h2>AR/VR Projects</h2>
-    <!-- (AR/VR projects unchanged, not repeating for brevity) -->
+    <h2>AR / VR / MR Projects</h2>
+    <p>I have developed AR apps for mobile devices, VR simulations for Oculus Quest, and MR collaboration environments on Quest 3. These projects include interactive product showcases, remote training modules, digital factories, and immersive meeting spaces for enterprise use.</p>
   </section>
 
   <section class="section">
     <h2>Skills</h2>
-    <p>Unity3D, C#, VRTK, Photon, AR Foundation, Android Studio, Git, Blender (basic), Photoshop (basic)</p>
+    <p>Unity3D, C#, Photon, AR Foundation, Android Studio, Git, AR/VR/MR, Project Management, Internet of Things</p>
   </section>
 
   <section class="section">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:ruchir.k.darji@gmail.com">ruchir.k.darji@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/ruchir-darji-4981129b/" target="_blank">linkedin.com/in/ruchir-darji-4981129b</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/6ruchir8" target="_blank">linkedin.com/in/6ruchir8</a></p>
     <p>GitHub: <a href="https://github.com/wrooom68" target="_blank">github.com/wrooom68</a></p>
   </section>
 </body>

@@ -60,6 +60,26 @@
         <img src="images/flying-car.jpg" alt="Flying Car Stunt"><h3>Flying Car Stunt</h3>
       </div>
     </div>
+        <div id="more-games">
+      <div class="game-grid">
+        <div class="game-card"><img src="images/eduisfun.gif"><h3>Eduisfun</h3></div>
+        <div class="game-card"><img src="images/monster-truck.gif"><h3>4x4 Monster Truck</h3></div>
+        <div class="game-card"><img src="images/wolf-quest.gif"><h3>Wolf Quest</h3></div>
+        <div class="game-card"><img src="images/lion-quest.gif"><h3>Lion Quest</h3></div>
+      </div>
+    </div>
+    <button onclick="
+      const more = document.getElementById('more-games');
+      const btn = this;
+      if (more.style.display === 'block') {
+        more. style.display = 'none';
+        btn.textContent = 'Show More';
+      } else {
+        more. style.display = 'block';
+        btn.textContent = 'Show Less';
+      }
+    ">Show More</button>
+  </div>
   </section>
 
   <section class="section">

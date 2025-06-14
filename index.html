@@ -127,7 +127,17 @@
         </div>
       </div>
     </div>
-    <button class="show-more-btn" onclick="document.getElementById('more-games').style.display='block'; this.style.display='none';">Show More</button>
+    <button class="show-more-btn" onclick="
+  const moreGames = document.getElementById('more-games');
+  const btn = this;
+  if (moreGames.style.display === 'block') {
+    moreGames.style.display = 'none';
+    btn.textContent = 'Show More';
+  } else {
+    moreGames.style.display = 'block';
+    btn.textContent = 'Show Less';
+  }
+">Show More</button>
   </section>
 
   <section class="section">

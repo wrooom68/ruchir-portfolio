@@ -4,42 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruchir Darji | Unity Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #1f1f1f;
-      padding: 2rem;
-      text-align: center;
-    }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-    h1, h2, h3 {
-      color: #fff;
-    }
-    .section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
+    body { font-family: sans-serif; background: #121212; color: #fff; margin: 0; }
+    header { background: #1f1f1f; padding: 2rem; text-align: center; }
+    header img { width: 120px; border-radius: 50%; margin-bottom: 1rem; }
+    h1, h2, h3 { color: #fff; }
+    .section { padding: 2rem; max-width: 1000px; margin: auto; }
     .game-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
     }
     .game-card {
-      background-color: #1e1e1e;
+      background: #1e1e1e;
       padding: 1rem;
       border-radius: 8px;
       text-align: center;
@@ -52,31 +29,8 @@
       border-radius: 6px;
       margin-bottom: 0.5rem;
     }
-    .project img {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-    a {
-      color: #90caf9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    #more-games {
-      display: none;
-    }
-    .show-more-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #333;
-      border: none;
-      border-radius: 5px;
-      color: #90caf9;
-      cursor: pointer;
-    }
+    a { color: #90caf9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -92,91 +46,92 @@
     <p><a href="https://drive.google.com/file/d/1hZ9kG2oqgdGyyNd7oNslg6lAc_5aMnH0/view?usp=sharing" target="_blank">📄 Download Resume (PDF)</a></p>
   </section>
 
+  <!-- GAME CATEGORIES -->
   <section class="section">
-    <h2>Games</h2>
+    <h2>Racing & Driving Games</h2>
     <div class="game-grid">
-      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.justhunting')">
-        <img src="images/just-hunting.gif" alt="Just Hunting">
-        <h3>Just Hunting</h3>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.mountainoffroadmonstertruck')">
+        <img src="images/monster-truck.jpg" alt="4x4 Monster Truck"><h3>4x4 Monster Truck</h3>
       </div>
-      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.balljumping')">
-        <img src="images/ball-jumping.gif" alt="Ball Jumping">
-        <h3>Ball Jumping</h3>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.secure3dstudio.monstertruckhillclimbsimulator')">
+        <img src="images/hill-climb.jpg" alt="Monster Truck Hill Climb"><h3>Monster Truck Hill Climb</h3>
       </div>
-      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.learnspelling')">
-        <img src="images/spelling-shooter.gif" alt="Spelling Shooter">
-        <h3>Spelling Shooter</h3>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.gamaxgamesidc.flyingcarstuntndemolition')">
+        <img src="images/flying-car.jpg" alt="Flying Car Stunt"><h3>Flying Car Stunt</h3>
       </div>
     </div>
-    
-        <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.EduIsFun.EduIsFun&hl=en')">
-          <img src="images/eduisfun.gif" alt="Eduisfun">
-          <h3>Eduisfun</h3>
-        </div>
-        <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.mountainoffroadmonstertruck')">
-          <img src="images/monster-truck.gif" alt="Monster Truck">
-          <h3>4x4 Monster Truck</h3>
-        </div>
-        <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.wolfquestsimulatorgame')">
-          <img src="images/wolf-quest.gif" alt="Wolf Quest">
-          <h3>Wolf Quest Simulator</h3>
-        </div>
-        <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.lionquestsimulator')">
-          <img src="images/lion-quest.gif" alt="Lion Quest">
-          <h3>Lion Quest Simulator</h3>
-        </div>
-      </div>
-    </div>
-    <button class="show-more-btn" onclick="
-  const moreGames = document.getElementById('more-games');
-  const btn = this;
-  if (moreGames.style.display === 'block') {
-    moreGames.style.display = 'none';
-    btn.textContent = 'Show More';
-  } else {
-    moreGames.style.display = 'block';
-    btn.textContent = 'Show Less';
-  }
-">Show More</button>
   </section>
 
   <section class="section">
-  <h2>AR / VR / MR Projects</h2>
-  <div class="game-grid">
-    <div class="game-card">
-      <img src="images/hr-vr.gif" alt="HR VR">
-      <h3>HR VR – Quest 2</h3>
+    <h2>Animal & Dinosaur Simulators</h2>
+    <div class="game-grid">
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.wolfquestsimulatorgame')">
+        <img src="images/wolf-quest.jpg" alt="Wolf Quest"><h3>Wolf Quest</h3>
+      </div>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.lionquestsimulator')">
+        <img src="images/lion-quest.jpg" alt="Lion Quest"><h3>Lion Quest</h3>
+      </div>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.glulengames.dinograndcitysimulator')">
+        <img src="images/dino-grand.jpg" alt="Dino Grand City"><h3>Dino Grand City</h3>
+      </div>
     </div>
-    <div class="game-card">
-      <img src="images/collab-vr.gif" alt="Collab VR">
-      <h3>Collab VR – Quest 2</h3>
-    </div>
-    <div class="game-card">
-      <img src="images/hikar-vr.gif" alt="Hikar VR">
-      <h3>Hikar VR – Quest 3</h3>
-    </div>
-    <div class="game-card">
-      <img src="images/hikar-mr.gif" alt="Hikar MR">
-      <h3>Hikar MR – Quest 3</h3>
-    </div>
-  </div>
-  <p style="margin-top: 1rem;">Projects include AR product demos, VR collaboration and training spaces, and MR factory visualizations for enterprise use.</p>
-</section>
-
-<section class="section">
-  <h2>PC Projects</h2>
-  <div class="game-grid">
-    <div class="game-card" onclick="window.open('https://drive.google.com/file/d/1ZJ-8Lu_BL26JqptHygvdt3fzkHLYRfVv/preview')">
-      <img src="images/daksh-simulator.gif" alt="DAKSH Simulator">
-      <h3>DAKSH Simulator (DRDO)</h3>
-    </div>
-  </div>
-  <p style="margin-top: 1rem;">A PC-based simulator for training Indian defense personnel on the operation of the DAKSH robot for navigation and bomb defusal.</p>
-</section>
+  </section>
 
   <section class="section">
-  <h2>Skills</h2>
-  <p>Unity3D, C#, Photon, AR Foundation, Android Studio, Git, AR/VR/MR, Project Management, Internet of Things</p>
+    <h2>Arcade & Endless Runners</h2>
+    <div class="game-grid">
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.justhunting')">
+        <img src="images/just-hunting.jpg" alt="Just Hunting"><h3>Just Hunting</h3>
+      </div>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.balljumping')">
+        <img src="images/ball-jumping.jpg" alt="Ball Jumping"><h3>Ball Jumping</h3>
+      </div>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.indiagames.arjunrunner')">
+        <img src="images/arjun.jpg" alt="Arjun – Prince of Bali"><h3>Arjun – Prince of Bali</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Educational & Puzzle Games</h2>
+    <div class="game-grid">
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.wrooom68.learnspelling')">
+        <img src="images/spelling-shooter.jpg" alt="Spelling Shooter"><h3>Spelling Shooter</h3>
+      </div>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.EduIsFun.EduIsFun&hl=en')">
+        <img src="images/eduisfun.jpg" alt="Eduisfun"><h3>Eduisfun</h3>
+      </div>
+      <div class="game-card" onclick="window.open('https://play.google.com/store/apps/details?id=com.disney.thoughtbubbles_goo')">
+        <img src="images/inside-out.jpg" alt="Inside Out"><h3>Inside Out Bubbles</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- AR/VR Section -->
+  <section class="section">
+    <h2>AR / VR / MR Projects</h2>
+    <div class="game-grid">
+      <div class="game-card"><img src="images/hr-vr.jpg"><h3>HR VR – Quest 2</h3></div>
+      <div class="game-card"><img src="images/collab-vr.jpg"><h3>Collab VR – Quest 2</h3></div>
+      <div class="game-card"><img src="images/hikar-vr.jpg"><h3>Hikar VR – Quest 3</h3></div>
+      <div class="game-card"><img src="images/hikar-mr.jpg"><h3>Hikar MR – Quest 3</h3></div>
+    </div>
+  </section>
+
+  <!-- PC Section -->
+  <section class="section">
+    <h2>PC Projects</h2>
+    <div class="game-grid">
+      <div class="game-card" onclick="window.open('https://drive.google.com/file/d/1ZJ-8Lu_BL26JqptHygvdt3fzkHLYRfVv/preview')">
+        <img src="images/daksh-simulator.jpg" alt="DAKSH"><h3>DAKSH Simulator (DRDO)</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills and Contact -->
+  <section class="section">
+    <h2>Skills</h2>
+    <p>Unity3D, C#, Photon, AR Foundation, Android Studio, Git, AR/VR/MR, Project Management, Internet of Things</p>
   </section>
 
   <section class="section">

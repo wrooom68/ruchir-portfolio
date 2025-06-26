@@ -39,8 +39,9 @@
 
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+            gap: 1rem; /* Space between columns and rows */
+            padding: 1rem 0; /* Optional: adds vertical space around the entire grid */
         }
 
         .game-card {

@@ -31,18 +31,40 @@
             color: #fff;
         }
 
+        .resume-btn {
+              background: #90caf9;
+              padding: .5rem 1rem;
+              border-radius: 5px;
+              color: #121212;
+              font-weight: bold;
+              display: inline-block;
+                }
+
+
         .section {
-            padding: 2rem;
+            padding: 3rem 1rem;
             max-width: 1000px;
             margin: auto;
         }
 
         .game-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
-            gap: 1rem; /* Space between columns and rows */
-            padding: 1rem 0; /* Optional: adds vertical space around the entire grid */
-        }
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 1rem;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .game-grid {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .game-grid {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
 
         .game-card {
             background: #1e1e1e;
@@ -50,7 +72,13 @@
             border-radius: 8px;
             text-align: center;
             cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
+        .game-card:hover {
+              transform: translateY(-4px);
+              box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            }
 
 .game-card img {
             width: 200px;
@@ -81,12 +109,12 @@
 
     <section class="section">
         <h2>About Me</h2>
-        <p>I'm a Unity developer with 7+ years of experience building interactive solutions — from casual mobile games
-            to immersive AR/VR/MR applications. I started my career creating and publishing over 20 Android games, and I
-            continue to be deeply passionate about gaming. In recent years, my focus has expanded to developing XR
-            solutions for industries, including product showcases, remote collaboration, and virtual training.</p>
-        <p><a href="https://drive.google.com/file/d/1r22TRk8XMXRfY-zvsr31zhpH6ImZZZVu/view?usp=sharing"
-                target="_blank">📄 Download Resume (PDF)</a></p>
+        <p>I'm a Unity Developer with 7+ years of experience, starting my career developing casual and simulation games for mobile platforms.
+            Over time, I transitioned into building advanced AR, VR, and MR solutions for industries - combining interactive design with real-world functionality. 
+            My work includes everything from mobile games to VR product showcases, collaborative virtual environments, and training simulators for industrial and defense sectors. 
+            I enjoy taking ideas from concept to functional, interactive experiences — whether for entertainment or enterprise needs.</p>
+        <p><a class="resume-btn" href="https://drive.google.com/file/d/1r22TRk8XMXRfY-zvsr31zhpH6ImZZZVu/view?usp=sharing" target="_blank">
+            Download Resume</a></p>
     </section>
 
     <!-- AR/VR Section -->

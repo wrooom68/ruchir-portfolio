@@ -7,12 +7,53 @@
     <title>Ruchir Darji | Unity XR & Simulation Developer Portfolio</title>
     <style>
         body { font-family: sans-serif; background: #121212; color: #fff; margin: 0; line-height: 1.6; }
-        header { background: #1f1f1f; padding: 2rem 1rem; text-align: center; }
-        header img { width: 120px; border-radius: 50%; margin-bottom: 1rem; }
-        h1, h2, h3 { color: #fff; }
-        .hero-title { margin-bottom: 0.25rem; }
-        .hero-tagline { color: #90caf9; font-size: 1.15rem; font-weight: bold; margin: 0.25rem 0; }
-        .hero-subtitle { max-width: 760px; margin: 0.75rem auto 0; color: #d8d8d8; }
+        header { text-align: left; }
+        .portfolio-hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 430px;
+            padding: 4.5rem 6vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            background:
+                radial-gradient(circle at 82% 35%, rgba(31, 178, 255, 0.28), transparent 34%),
+                radial-gradient(circle at 52% 52%, rgba(0, 229, 255, 0.18), transparent 34%),
+                linear-gradient(135deg, #03111f 0%, #061b32 48%, #0b2d52 100%);
+        }
+        .portfolio-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(90deg, rgba(144, 202, 249, 0.08) 1px, transparent 1px),
+                linear-gradient(rgba(144, 202, 249, 0.07) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.35;
+        }
+        .portfolio-hero::after {
+            content: "XR   AR   VR   3D   SIMULATION   UNITY   C#";
+            position: absolute;
+            right: -60px;
+            bottom: 20px;
+            color: rgba(144, 202, 249, 0.08);
+            font-size: clamp(2.5rem, 6vw, 6rem);
+            font-weight: 800;
+            letter-spacing: 0.2rem;
+            white-space: nowrap;
+        }
+        .hero-content, .hero-portrait { position: relative; z-index: 1; }
+        .hero-content { max-width: 760px; }
+        .hero-kicker { color: #4ddfff; text-transform: uppercase; letter-spacing: 0.16rem; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .hero-title { margin: 0; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; font-weight: 800; letter-spacing: -0.08em; }
+        .hero-title span { color: #4ddfff; }
+        .hero-tagline { color: #fff; font-size: clamp(1.05rem, 2vw, 1.55rem); font-weight: 600; margin: 1.25rem 0 0.25rem; }
+        .hero-subtitle { max-width: 760px; margin: 0.75rem 0 0; color: #d8ecff; font-size: 1.05rem; }
+        .hero-keywords { display: flex; flex-wrap: wrap; gap: 0.65rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+        .hero-keywords li { color: #59e6ff; border: 1px solid rgba(89, 230, 255, 0.35); background: rgba(2, 23, 44, 0.55); padding: 0.45rem 0.7rem; border-radius: 999px; font-weight: 600; }
+        .hero-actions { margin-top: 1.75rem; }
+        .hero-portrait img { width: min(300px, 28vw); min-width: 220px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 28px; border: 2px solid rgba(144, 202, 249, 0.55); box-shadow: 0 0 40px rgba(77, 223, 255, 0.25); background: #0d2238; }
         .resume-btn { background: #90caf9; padding: .6rem 1rem; border-radius: 5px; color: #121212; font-weight: bold; display: inline-block; margin: 0.25rem; }
         .secondary-btn { border: 1px solid #90caf9; padding: .55rem 1rem; border-radius: 5px; color: #90caf9; font-weight: bold; display: inline-block; margin: 0.25rem; }
         .section { padding: 3rem 1rem; max-width: 1000px; margin: auto; }
@@ -20,7 +61,11 @@
         .target-roles { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 1rem 0 0; list-style: none; }
         .target-roles li, .skill-pill { background: #243447; color: #e8f4ff; padding: 0.45rem 0.7rem; border-radius: 999px; font-size: 0.95rem; }
         .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-        @media (max-width: 768px) { .skills-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+            .portfolio-hero { flex-direction: column-reverse; align-items: flex-start; padding: 3rem 1.25rem; min-height: auto; }
+            .hero-portrait img { width: 210px; min-width: 210px; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
         .skill-card { background: #1e1e1e; padding: 1rem; border-radius: 8px; }
         .skill-card h3 { margin-top: 0; color: #90caf9; }
         .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
@@ -44,11 +89,26 @@
 </head>
 
 <body>
-    <header>
-        <img src="myProfilePic.jpg" alt="Ruchir Darji" />
-        <h1 class="hero-title">Ruchir Darji</h1>
-        <p class="hero-tagline">Unity Developer | XR / AR / VR | Simulation & Interactive 3D Applications</p>
-        <p class="hero-subtitle">7+ years building mobile games, immersive training experiences, enterprise XR product showcases, and real-time interactive applications using Unity and C#.</p>
+    <header class="portfolio-hero">
+        <div class="hero-content">
+            <p class="hero-kicker">Unity • XR • Simulation • Interactive 3D</p>
+            <h1 class="hero-title">Ruchir <span>Darji</span></h1>
+            <p class="hero-tagline">Unity Developer | XR / AR / VR | Simulation & Interactive 3D Applications</p>
+            <p class="hero-subtitle">7+ years building mobile games, immersive training experiences, enterprise XR product showcases, and real-time interactive applications using Unity and C#.</p>
+            <ul class="hero-keywords">
+                <li>Mobile Games</li>
+                <li>Training Simulations</li>
+                <li>Multiplayer</li>
+                <li>Prototyping</li>
+            </ul>
+            <div class="hero-actions">
+                <a class="resume-btn" href="https://drive.google.com/file/d/1_QugHIzuHZyTZKE3LOpNXgfcRVVAr_UX/view?usp=sharing" target="_blank">Download Unity/XR Resume</a>
+                <a class="secondary-btn" href="https://www.linkedin.com/in/ruchir-darji" target="_blank">View LinkedIn</a>
+            </div>
+        </div>
+        <div class="hero-portrait">
+            <img src="myProfilePic.jpg" alt="Ruchir Darji - Unity XR Developer" />
+        </div>
     </header>
 
     <section class="section">

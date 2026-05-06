@@ -9,12 +9,11 @@
         :root {
             --bg: #121212;
             --card: #1e1e1e;
-            --card-soft: #222b35;
+            --card-soft: #17202a;
             --accent: #90caf9;
             --accent-strong: #4ddfff;
             --text-soft: #d8d8d8;
         }
-
         * { box-sizing: border-box; }
         body { font-family: Arial, sans-serif; background: var(--bg); color: #fff; margin: 0; line-height: 1.6; }
         h1, h2, h3 { color: #fff; }
@@ -22,42 +21,9 @@
         a:hover { text-decoration: underline; }
         button { background: var(--accent); color: #121212; border: none; padding: 0.6rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
         button:hover { opacity: 0.9; }
-
-        .portfolio-hero {
-            position: relative;
-            overflow: hidden;
-            min-height: 330px;
-            padding: 3rem 6vw;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            background:
-                radial-gradient(circle at 82% 35%, rgba(31, 178, 255, 0.24), transparent 34%),
-                radial-gradient(circle at 48% 55%, rgba(0, 229, 255, 0.14), transparent 34%),
-                linear-gradient(135deg, #03111f 0%, #061b32 52%, #0b2d52 100%);
-        }
-        .portfolio-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(90deg, rgba(144, 202, 249, 0.07) 1px, transparent 1px),
-                linear-gradient(rgba(144, 202, 249, 0.06) 1px, transparent 1px);
-            background-size: 70px 70px;
-            opacity: 0.28;
-        }
-        .portfolio-hero::after {
-            content: "UNITY  XR  SIMULATION  INTERACTIVE 3D";
-            position: absolute;
-            right: -40px;
-            bottom: 16px;
-            color: rgba(144, 202, 249, 0.07);
-            font-size: clamp(2rem, 5vw, 4.5rem);
-            font-weight: 800;
-            letter-spacing: 0.2rem;
-            white-space: nowrap;
-        }
+        .portfolio-hero { position: relative; overflow: hidden; min-height: 330px; padding: 3rem 6vw; display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: radial-gradient(circle at 82% 35%, rgba(31, 178, 255, 0.24), transparent 34%), radial-gradient(circle at 48% 55%, rgba(0, 229, 255, 0.14), transparent 34%), linear-gradient(135deg, #03111f 0%, #061b32 52%, #0b2d52 100%); }
+        .portfolio-hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(144, 202, 249, 0.07) 1px, transparent 1px), linear-gradient(rgba(144, 202, 249, 0.06) 1px, transparent 1px); background-size: 70px 70px; opacity: 0.28; }
+        .portfolio-hero::after { content: "UNITY  XR  SIMULATION  INTERACTIVE 3D"; position: absolute; right: -40px; bottom: 16px; color: rgba(144, 202, 249, 0.07); font-size: clamp(2rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: 0.2rem; white-space: nowrap; }
         .hero-content, .hero-portrait { position: relative; z-index: 1; }
         .hero-content { max-width: 760px; }
         .hero-kicker { color: var(--accent-strong); text-transform: uppercase; letter-spacing: 0.16rem; font-size: 0.85rem; font-weight: 700; margin: 0 0 0.6rem; }
@@ -67,10 +33,8 @@
         .hero-subtitle { max-width: 720px; margin: 0.65rem 0 0; color: #d8ecff; font-size: 1rem; }
         .hero-actions { margin-top: 1.35rem; }
         .hero-portrait img { width: min(220px, 22vw); min-width: 175px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 24px; border: 2px solid rgba(144, 202, 249, 0.45); box-shadow: 0 0 32px rgba(77, 223, 255, 0.2); background: #0d2238; }
-
         .resume-btn { background: var(--accent); padding: .6rem 1rem; border-radius: 6px; color: #121212; font-weight: bold; display: inline-block; margin: 0.25rem 0.25rem 0.25rem 0; }
         .secondary-btn { border: 1px solid var(--accent); padding: .55rem 1rem; border-radius: 6px; color: var(--accent); font-weight: bold; display: inline-block; margin: 0.25rem 0.25rem 0.25rem 0; }
-
         .section { padding: 2.6rem 1rem; max-width: 1000px; margin: auto; }
         .section h2 { margin-top: 0; }
         .section-intro { color: var(--text-soft); margin-top: -0.4rem; }
@@ -79,32 +43,28 @@
         .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
         .skill-card, .game-card, .contact-box { background: var(--card); padding: 1rem; border-radius: 10px; }
         .skill-card h3 { margin-top: 0; color: var(--accent); }
-
         .game-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1rem 0; }
+        .featured-list { display: grid; gap: 1.2rem; padding: 1rem 0; }
         .game-card { text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .game-card:hover { transform: translateY(-4px); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .game-card.clickable { cursor: pointer; }
         .game-card img { width: 200px; height: 150px; object-fit: contain; display: block; margin: 0 auto 0.5rem auto; border-radius: 6px; background-color: #333; }
-        .featured-card { text-align: left; }
-        .featured-card img { width: 100%; max-width: 260px; height: 160px; }
-        .featured-card h3 { text-align: center; margin-bottom: 0.25rem; }
-        .project-subtitle { color: var(--accent); font-size: 0.95rem; font-weight: bold; text-align: center; margin-top: 0; }
-        .project-details { padding-left: 1.1rem; margin-bottom: 0; }
+        .featured-card { text-align: left; padding: 1.1rem; }
+        .featured-summary { display: grid; grid-template-columns: 250px 1fr; gap: 1.25rem; align-items: start; }
+        .featured-card img { width: 100%; height: 170px; object-fit: contain; border-radius: 8px; background-color: #333; }
+        .featured-card h3 { margin: 0 0 0.25rem; text-align: left; }
+        .project-subtitle { color: var(--accent); font-size: 0.95rem; font-weight: bold; margin: 0 0 0.5rem; }
+        .project-details { padding-left: 1.1rem; margin: 0; }
         .case-study { margin-top: 1rem; border-top: 1px solid rgba(144, 202, 249, 0.22); padding-top: 0.85rem; }
         .case-study summary { cursor: pointer; color: var(--accent-strong); font-weight: 700; list-style-position: outside; }
-        .case-study-content { margin-top: 0.85rem; background: #17202a; border: 1px solid rgba(144, 202, 249, 0.16); border-radius: 8px; padding: 0.9rem; }
+        .case-study summary:hover { color: #fff; }
+        .case-study-content { margin-top: 0.85rem; background: var(--card-soft); border: 1px solid rgba(144, 202, 249, 0.16); border-radius: 8px; padding: 1rem; }
         .case-study-content h4 { color: var(--accent); margin: 0.9rem 0 0.35rem; }
         .case-study-content h4:first-child { margin-top: 0; }
         .case-study-content p { margin: 0.25rem 0 0.65rem; }
         .case-study-content ul { padding-left: 1.1rem; margin-top: 0.25rem; }
         .media-note { color: var(--text-soft); font-size: 0.92rem; border-left: 3px solid var(--accent); padding-left: 0.75rem; }
-
-        @media (max-width: 768px) {
-            .portfolio-hero { flex-direction: column-reverse; align-items: flex-start; padding: 2.4rem 1.25rem; min-height: auto; }
-            .hero-portrait img { width: 180px; min-width: 180px; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .game-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        @media (max-width: 768px) { .portfolio-hero { flex-direction: column-reverse; align-items: flex-start; padding: 2.4rem 1.25rem; min-height: auto; } .hero-portrait img { width: 180px; min-width: 180px; } .skills-grid { grid-template-columns: 1fr; } .game-grid { grid-template-columns: repeat(2, 1fr); } .featured-summary { grid-template-columns: 1fr; } }
         @media (max-width: 480px) { .game-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -116,329 +76,29 @@
             <h1 class="hero-title">Ruchir <span>Darji</span></h1>
             <p class="hero-tagline">Unity Developer | XR / AR / VR | Simulation & Interactive 3D Applications</p>
             <p class="hero-subtitle">7+ years building mobile games, immersive training experiences, enterprise XR product showcases, and real-time interactive applications using Unity and C#.</p>
-            <div class="hero-actions">
-                <a class="resume-btn" href="https://drive.google.com/file/d/1_QugHIzuHZyTZKE3LOpNXgfcRVVAr_UX/view?usp=sharing" target="_blank">Download Resume</a>
-                <a class="secondary-btn" href="https://www.linkedin.com/in/ruchir-darji" target="_blank">LinkedIn</a>
-                <a class="secondary-btn" href="mailto:ruchir.k.darji@gmail.com">Email Me</a>
-            </div>
+            <div class="hero-actions"><a class="resume-btn" href="https://drive.google.com/file/d/1_QugHIzuHZyTZKE3LOpNXgfcRVVAr_UX/view?usp=sharing" target="_blank">Download Resume</a><a class="secondary-btn" href="https://www.linkedin.com/in/ruchir-darji" target="_blank">LinkedIn</a><a class="secondary-btn" href="mailto:ruchir.k.darji@gmail.com">Email Me</a></div>
         </div>
-        <div class="hero-portrait">
-            <img src="myProfilePic.jpg" alt="Ruchir Darji - Unity XR Developer" />
-        </div>
+        <div class="hero-portrait"><img src="myProfilePic.jpg" alt="Ruchir Darji - Unity XR Developer" /></div>
     </header>
 
-    <section class="section">
-        <h2>About</h2>
-        <p>I am a Unity Developer with 7+ years of experience across mobile games, AR/VR/MR applications, training simulations, industrial visualization, and interactive real-time 3D experiences.</p>
-        <p>I am strongest in Unity, C#, gameplay systems, XR interactions, UI implementation, prototyping, and converting product or training concepts into working interactive applications.</p>
-        <ul class="target-roles">
-            <li>Unity Developer</li>
-            <li>XR Developer</li>
-            <li>Simulation Developer</li>
-            <li>AR/VR Developer</li>
-            <li>Interactive Developer</li>
-        </ul>
-    </section>
+    <section class="section"><h2>About</h2><p>I am a Unity Developer with 7+ years of experience across mobile games, AR/VR/MR applications, training simulations, industrial visualization, and interactive real-time 3D experiences.</p><p>I am strongest in Unity, C#, gameplay systems, XR interactions, UI implementation, prototyping, and converting product or training concepts into working interactive applications.</p><ul class="target-roles"><li>Unity Developer</li><li>XR Developer</li><li>Simulation Developer</li><li>AR/VR Developer</li><li>Interactive Developer</li></ul></section>
 
-    <section class="section">
-        <h2>Core Skills</h2>
-        <p class="section-intro">Practical skills focused on Unity-based production, XR interaction, gameplay implementation, and real-time 3D applications.</p>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Unity & Programming</h3>
-                <ul class="skill-list">
-                    <li class="skill-pill">Unity3D</li>
-                    <li class="skill-pill">C#</li>
-                    <li class="skill-pill">Gameplay Programming</li>
-                    <li class="skill-pill">UI Implementation</li>
-                    <li class="skill-pill">Git</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <h3>XR & Simulation</h3>
-                <ul class="skill-list">
-                    <li class="skill-pill">AR / VR / MR</li>
-                    <li class="skill-pill">XR Interaction Systems</li>
-                    <li class="skill-pill">Training Simulations</li>
-                    <li class="skill-pill">Interactive 3D</li>
-                    <li class="skill-pill">PC Simulation</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <h3>Mobile & Multiplayer</h3>
-                <ul class="skill-list">
-                    <li class="skill-pill">Android Builds</li>
-                    <li class="skill-pill">Photon</li>
-                    <li class="skill-pill">Mobile Games</li>
-                    <li class="skill-pill">Performance Optimization</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <h3>Delivery & Collaboration</h3>
-                <ul class="skill-list">
-                    <li class="skill-pill">Prototyping</li>
-                    <li class="skill-pill">Client Demos</li>
-                    <li class="skill-pill">Project Communication</li>
-                    <li class="skill-pill">Technical Presentation</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <section class="section"><h2>Core Skills</h2><p class="section-intro">Practical skills focused on Unity-based production, XR interaction, gameplay implementation, and real-time 3D applications.</p><div class="skills-grid"><div class="skill-card"><h3>Unity & Programming</h3><ul class="skill-list"><li class="skill-pill">Unity3D</li><li class="skill-pill">C#</li><li class="skill-pill">Gameplay Programming</li><li class="skill-pill">UI Implementation</li><li class="skill-pill">Git</li></ul></div><div class="skill-card"><h3>XR & Simulation</h3><ul class="skill-list"><li class="skill-pill">AR / VR / MR</li><li class="skill-pill">XR Interaction Systems</li><li class="skill-pill">Training Simulations</li><li class="skill-pill">Interactive 3D</li><li class="skill-pill">PC Simulation</li></ul></div><div class="skill-card"><h3>Mobile & Multiplayer</h3><ul class="skill-list"><li class="skill-pill">Android Builds</li><li class="skill-pill">Photon</li><li class="skill-pill">Mobile Games</li><li class="skill-pill">Performance Optimization</li></ul></div><div class="skill-card"><h3>Delivery & Collaboration</h3><ul class="skill-list"><li class="skill-pill">Prototyping</li><li class="skill-pill">Client Demos</li><li class="skill-pill">Project Communication</li><li class="skill-pill">Technical Presentation</li></ul></div></div></section>
 
     <section class="section">
         <h2>Featured XR / Simulation Work</h2>
         <p class="section-intro">Selected internal prototypes, demos, and simulation work that best represents my Unity, XR, enterprise visualization, and training-simulation experience.</p>
-        <div class="game-grid">
-            <div class="game-card featured-card">
-                <img src="Images/collab-VR.gif" alt="Collaborative VR Training Platform">
-                <h3>Würth Collaborative VR Training / Presentation Prototype</h3>
-                <p class="project-subtitle">Unity · Photon · VRTK · Multi-Platform VR</p>
-                <ul class="project-details">
-                    <li>Built a collaborative VR prototype for product/machine presentation, training concepts, and remote discussion.</li>
-                    <li>Supported Quest, PC VR, desktop PC, and Android access through a prototype-level multiplayer flow.</li>
-                    <li>Enabled users to join a shared virtual space and inspect 3D products/machines interactively.</li>
-                </ul>
-                <details class="case-study">
-                    <summary>View Case Study</summary>
-                    <div class="case-study-content">
-                        <h4>Context</h4>
-                        <p>Internal Würth India prototype created around 2020 for enterprise collaboration, training concept validation, product/machine presentation, and stakeholder demonstrations.</p>
-                        <h4>My Role</h4>
-                        <p>Main Unity Developer with ownership responsibility for the prototype implementation and demo preparation.</p>
-                        <h4>Tech Stack</h4>
-                        <p>Unity, C#, Photon, VRTK, Quest/PC VR, desktop PC, Android builds.</p>
-                        <h4>What I Built</h4>
-                        <ul>
-                            <li>User avatar / player presence and room/session joining using Photon.</li>
-                            <li>Object grab, rotate, inspect, navigation, movement, UI panels, and presentation flow.</li>
-                            <li>3D model import/setup, performance-focused preparation, builds, testing, and stakeholder demo support.</li>
-                        </ul>
-                        <h4>Technical / Delivery Challenges</h4>
-                        <ul>
-                            <li>Combining VR, desktop, and Android access into one working collaborative prototype.</li>
-                            <li>Integrating avatar presence, object interaction, navigation, UI, communication, and product inspection into a usable demo flow.</li>
-                            <li>Debugging Unity/XR/plugin issues where small errors could require deep investigation and iteration.</li>
-                        </ul>
-                        <h4>Outcome</h4>
-                        <p>Working internal prototype completed and used for client/stakeholder presentation. Long-term project status after my involvement is not confirmed.</p>
-                        <p class="media-note"><strong>Media note:</strong> Public visuals may use representative or recreated portfolio media because original project assets/builds were internal company work.</p>
-                        <p><a href="https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj" target="_blank">View related XR demo media</a></p>
-                    </div>
-                </details>
-            </div>
-            <div class="game-card featured-card">
-                <img src="Images/hikar-mr.png" alt="Hikar Digital Twin VR Factory Visualization">
-                <h3>Hikar Digital Twin VR Factory Visualization</h3>
-                <p class="project-subtitle">Unity · Quest · WebGL · XR Toolkit · Live IoT Data</p>
-                <ul class="project-details">
-                    <li>Built a digital twin-style VR factory visualization prototype with live IoT/API data display.</li>
-                    <li>Created WebGL machine viewers and VR factory scenes for product presentation, training, and demo workflows.</li>
-                    <li>Integrated machine status panels, dashboards, indicators, charts, and interactive product manipulation.</li>
-                </ul>
-                <details class="case-study">
-                    <summary>View Case Study</summary>
-                    <div class="case-study-content">
-                        <h4>Context</h4>
-                        <p>Internal Hikar Canada prototype developed around 2023–2024 for digital twin visualization, VR factory presentation, training concept validation, and stakeholder/client demos.</p>
-                        <h4>My Role</h4>
-                        <p>Main Unity Developer responsible for most Unity-side implementation.</p>
-                        <h4>Tech Stack</h4>
-                        <p>Unity, C#, Meta/Oculus Quest, WebGL, Photon, XR Interaction Toolkit, custom Unity scripts, API/live data integration.</p>
-                        <h4>What I Built</h4>
-                        <ul>
-                            <li>Individual WebGL machine viewers that were integrated into a React dashboard by the wider team.</li>
-                            <li>VR factory setup with machines, product manipulation, training modules, and guided presentation flows.</li>
-                            <li>Floating UI panels, dashboard screens, machine indicators, charts/text values, and machine-state visualization.</li>
-                            <li>Quest builds, WebGL builds, model setup, interaction logic, testing, and demo preparation.</li>
-                        </ul>
-                        <h4>Data Integration</h4>
-                        <p>The project started with mock/sample data and later used real/API data representing live IoT machine status.</p>
-                        <h4>Outcome</h4>
-                        <p>Working internal prototype completed and used for stakeholder demos, training concept validation, and live-data visualization demonstration. Long-term project status after my involvement is not confirmed.</p>
-                        <p class="media-note"><strong>Media note:</strong> Original project files/builds are internal. Public portfolio visuals should use safe screenshots, cropped/blurred views, representative scenes, or recreated demo media only.</p>
-                        <p><a href="https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj" target="_blank">View related XR demo media</a></p>
-                    </div>
-                </details>
-            </div>
-            <div class="game-card featured-card">
-                <img src="Images/daksh-simulator.png" alt="DAKSH Training Simulator">
-                <h3>DAKSH Training Simulator</h3>
-                <p class="project-subtitle">Unity · PC Simulation · Serial/USB Input · Training Controls</p>
-                <ul class="project-details">
-                    <li>Worked as the main Unity programmer on a PC-based operational training simulator.</li>
-                    <li>Integrated actual remote-control hardware input through Serial/USB communication.</li>
-                    <li>Built simulated machine/robot-style movement, dashboard UI, cameras, feedback, warnings, and deployment support.</li>
-                </ul>
-                <details class="case-study">
-                    <summary>View Case Study</summary>
-                    <div class="case-study-content">
-                        <h4>Context</h4>
-                        <p>PC-based operational training simulator developed for a DRDO India-related training context. The project was coordinated through a mediator/team that managed project design and presentation.</p>
-                        <h4>My Role</h4>
-                        <p>Main Unity Programmer. I handled around 90% of the Unity-side implementation, including programming execution, simulator behavior, UI/dashboard logic, control integration, deployment, and post-deployment support changes.</p>
-                        <h4>Tech Stack</h4>
-                        <p>Unity, C#, PC build, UGUI, Serial/USB communication, keyboard/mouse input, joystick/button hardware input, custom scripts, camera systems, animation, physics/collision response, and 3D model setup.</p>
-                        <h4>What I Built</h4>
-                        <ul>
-                            <li>Bridge between Unity and actual physical remote-control hardware with multiple joysticks and buttons.</li>
-                            <li>Machine/robot-style movement simulation, arm/part movement, camera switching, multiple camera angles, and operation feedback.</li>
-                            <li>Dashboard UI, status/warning indicators, training procedure flow, scene setup, animation states, physics/collision response, build preparation, deployment, and support updates.</li>
-                        </ul>
-                        <h4>Important Clarification</h4>
-                        <p>The simulator used the actual training remote-control hardware for input, but it did not control the real machine. Unity visualized the simulated machine/robot-style response on screen for training purposes.</p>
-                        <h4>Outcome</h4>
-                        <p>Working PC simulator delivered to the mediator/client/team, used for training/demo and stakeholder presentation, with additional support provided after deployment.</p>
-                        <p class="media-note"><strong>Media note:</strong> The portfolio video is an actual trailer/demo prepared by the project team for presentation to DRDO India. Sensitive implementation details are intentionally kept general.</p>
-                        <p><a href="https://drive.google.com/file/d/1ZJ-8Lu_BL26JqptHygvdt3fzkHLYRfVv/preview" target="_blank">View project trailer/demo</a></p>
-                    </div>
-                </details>
-            </div>
+        <div class="featured-list">
+            <article class="game-card featured-card"><div class="featured-summary"><img src="Images/collab-VR.gif" alt="Collaborative VR Training Platform"><div><h3>Würth Collaborative VR Training / Presentation Prototype</h3><p class="project-subtitle">Unity · Photon · VRTK · Multi-Platform VR</p><ul class="project-details"><li>Built a collaborative VR prototype for product/machine presentation, training concepts, and remote discussion.</li><li>Supported Quest, PC VR, desktop PC, and Android access through a prototype-level multiplayer flow.</li><li>Enabled users to join a shared virtual space and inspect 3D products/machines interactively.</li></ul></div></div><details class="case-study"><summary>View Case Study</summary><div class="case-study-content"><h4>Context</h4><p>Internal Würth India prototype created around 2020 for enterprise collaboration, training concept validation, product/machine presentation, and stakeholder demonstrations.</p><h4>My Role</h4><p>Main Unity Developer with ownership responsibility for the prototype implementation and demo preparation.</p><h4>Tech Stack</h4><p>Unity, C#, Photon, VRTK, Quest/PC VR, desktop PC, Android builds.</p><h4>What I Built</h4><ul><li>User avatar / player presence and room/session joining using Photon.</li><li>Object grab, rotate, inspect, navigation, movement, UI panels, and presentation flow.</li><li>3D model import/setup, performance-focused preparation, builds, testing, and stakeholder demo support.</li></ul><h4>Technical / Delivery Challenges</h4><ul><li>Combining VR, desktop, and Android access into one working collaborative prototype.</li><li>Integrating avatar presence, object interaction, navigation, UI, communication, and product inspection into a usable demo flow.</li><li>Debugging Unity/XR/plugin issues where small errors could require deep investigation and iteration.</li></ul><h4>Outcome</h4><p>Working internal prototype completed and used for client/stakeholder presentation. Long-term project status after my involvement is not confirmed.</p><p class="media-note"><strong>Media note:</strong> Public visuals may use representative or recreated portfolio media because original project assets/builds were internal company work.</p><p><a href="https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj" target="_blank">View related XR demo media</a></p></div></details></article>
+            <article class="game-card featured-card"><div class="featured-summary"><img src="Images/hikar-mr.png" alt="Hikar Digital Twin VR Factory Visualization"><div><h3>Hikar Digital Twin VR Factory Visualization</h3><p class="project-subtitle">Unity · Quest · WebGL · XR Toolkit · Live IoT Data</p><ul class="project-details"><li>Built a digital twin-style VR factory visualization prototype with live IoT/API data display.</li><li>Created WebGL machine viewers and VR factory scenes for product presentation, training, and demo workflows.</li><li>Integrated machine status panels, dashboards, indicators, charts, and interactive product manipulation.</li></ul></div></div><details class="case-study"><summary>View Case Study</summary><div class="case-study-content"><h4>Context</h4><p>Internal Hikar Canada prototype developed around 2023–2024 for digital twin visualization, VR factory presentation, training concept validation, and stakeholder/client demos.</p><h4>My Role</h4><p>Main Unity Developer responsible for most Unity-side implementation.</p><h4>Tech Stack</h4><p>Unity, C#, Meta/Oculus Quest, WebGL, Photon, XR Interaction Toolkit, custom Unity scripts, API/live data integration.</p><h4>What I Built</h4><ul><li>Individual WebGL machine viewers that were integrated into a React dashboard by the wider team.</li><li>VR factory setup with machines, product manipulation, training modules, and guided presentation flows.</li><li>Floating UI panels, dashboard screens, machine indicators, charts/text values, and machine-state visualization.</li><li>Quest builds, WebGL builds, model setup, interaction logic, testing, and demo preparation.</li></ul><h4>Data Integration</h4><p>The project started with mock/sample data and later used real/API data representing live IoT machine status.</p><h4>Outcome</h4><p>Working internal prototype completed and used for stakeholder demos, training concept validation, and live-data visualization demonstration. Long-term project status after my involvement is not confirmed.</p><p class="media-note"><strong>Media note:</strong> Original project files/builds are internal. Public portfolio visuals should use safe screenshots, cropped/blurred views, representative scenes, or recreated demo media only.</p><p><a href="https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj" target="_blank">View related XR demo media</a></p></div></details></article>
+            <article class="game-card featured-card"><div class="featured-summary"><img src="Images/daksh-simulator.png" alt="DAKSH Training Simulator"><div><h3>DAKSH Training Simulator</h3><p class="project-subtitle">Unity · PC Simulation · Serial/USB Input · Training Controls</p><ul class="project-details"><li>Worked as the main Unity programmer on a PC-based operational training simulator.</li><li>Integrated actual remote-control hardware input through Serial/USB communication.</li><li>Built simulated machine/robot-style movement, dashboard UI, cameras, feedback, warnings, and deployment support.</li></ul></div></div><details class="case-study"><summary>View Case Study</summary><div class="case-study-content"><h4>Context</h4><p>PC-based operational training simulator developed for a DRDO India-related training context. The project was coordinated through a mediator/team that managed project design and presentation.</p><h4>My Role</h4><p>Main Unity Programmer. I handled around 90% of the Unity-side implementation, including programming execution, simulator behavior, UI/dashboard logic, control integration, deployment, and post-deployment support changes.</p><h4>Tech Stack</h4><p>Unity, C#, PC build, UGUI, Serial/USB communication, keyboard/mouse input, joystick/button hardware input, custom scripts, camera systems, animation, physics/collision response, and 3D model setup.</p><h4>What I Built</h4><ul><li>Bridge between Unity and actual physical remote-control hardware with multiple joysticks and buttons.</li><li>Machine/robot-style movement simulation, arm/part movement, camera switching, multiple camera angles, and operation feedback.</li><li>Dashboard UI, status/warning indicators, training procedure flow, scene setup, animation states, physics/collision response, build preparation, deployment, and support updates.</li></ul><h4>Important Clarification</h4><p>The simulator used the actual training remote-control hardware for input, but it did not control the real machine. Unity visualized the simulated machine/robot-style response on screen for training purposes.</p><h4>Outcome</h4><p>Working PC simulator delivered to the mediator/client/team, used for training/demo and stakeholder presentation, with additional support provided after deployment.</p><p class="media-note"><strong>Media note:</strong> The portfolio video is an actual trailer/demo prepared by the project team for presentation to DRDO India. Sensitive implementation details are intentionally kept general.</p><p><a href="https://drive.google.com/file/d/1ZJ-8Lu_BL26JqptHygvdt3fzkHLYRfVv/preview" target="_blank">View project trailer/demo</a></p></div></details></article>
         </div>
     </section>
 
-    <section class="section">
-        <h2>Additional XR / AR / VR Work</h2>
-        <div class="game-grid">
-            <div class="game-card clickable" onclick="window.open('https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj')">
-                <img src="Images/wurth-hr.gif" alt="Wurth HR VR">
-                <h3>Wurth - HR VR</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj')">
-                <img src="Images/ar-welten.png" alt="AR Welten">
-                <h3>AR Welten</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj')">
-                <img src="Images/hikar-vr.gif" alt="Hikar VR">
-                <h3>Hikar VR</h3>
-            </div>
-        </div>
-        <div id="avm-more-games" style="display: none;">
-            <div class="game-grid">
-                <div class="game-card clickable" onclick="window.open('https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj')">
-                    <img src="Images/wurth-museum.png" alt="Wurth Museum AR">
-                    <h3>Wurth Museum AR</h3>
-                </div>
-            </div>
-        </div>
-        <button onclick="const more4 = document.getElementById('avm-more-games'); const btn4 = this; if (more4.style.display === 'block') { more4.style.display = 'none'; btn4.textContent = 'Show More'; } else { more4.style.display = 'block'; btn4.textContent = 'Show Less'; }">Show More</button>
-    </section>
-
-    <section class="section">
-        <h2>Selected Mobile & Educational Games</h2>
-        <p class="section-intro">A sample of mobile, educational, puzzle, and casual games developed or maintained using Unity.</p>
-        <div class="game-grid">
-            <div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.disney.frozensaga_goo')">
-                <img src="Images/frozen.png" alt="Disney Frozen Free Fall Games">
-                <h3>Disney Frozen Free Fall Games</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://apkpure.com/stepappkids/com.eduisfun.stepappkids')">
-                <img src="Images/stepapp-kids.png" alt="STEPappKids">
-                <h3>STEPappKids</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.EduIsFun.EduIsFun&hl=en')">
-                <img src="Images/eduisfun.png" alt="Eduisfun">
-                <h3>Eduisfun</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.mobicloud.ludoraja')">
-                <img src="Images/ludo-raja.png" alt="Ludo Raja">
-                <h3>Ludo Raja</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.mobicloud.worldcricket2017')">
-                <img src="Images/cricket.png" alt="World Cricket 2017">
-                <h3>World Cricket 2017</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://apkpure.com/chennai-express-official-game/com.Indiagames.ChennaiExpressEscapeFromRameshwaram')">
-                <img src="Images/chennai.png" alt="Chennai Express Official Game">
-                <h3>Chennai Express Official Game</h3>
-            </div>
-        </div>
-        <div id="mobile-more-games" style="display: none;">
-            <div class="game-grid">
-                <div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.MobicloudTechnologies.FishWorld')">
-                    <img src="Images/fish-world.png" alt="Fish world">
-                    <h3>Fish world</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.disney.thoughtbubbles_goo')">
-                    <img src="Images/inside-out.png" alt="Inside Out">
-                    <h3>Inside Out Bubbles</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://play.unity.com/en/games/0a60936a-f0f2-4bf4-923d-5fde2cb657c3/spelling-shooter')">
-                    <img src="Images/spelling-shooter.png" alt="Spelling Shooter">
-                    <h3>Spelling Shooter</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://greenythegreat.com/greeny-game/')">
-                    <img src="Images/greeny.png" alt="Greeny-The Great">
-                    <h3>Greeny-The Great</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://play.unity.com/en/games/91999377-dae8-47a0-a8a1-6ee9d41ac9e3/just-hunting')">
-                    <img src="Images/just-hunting.png" alt="Just Hunting">
-                    <h3>Just Hunting</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://apkpure.com/motu-patlu-ki-jodi/com.nazara.talkingpixels.motupatludash')">
-                    <img src="Images/motu-patlu.png" alt="Motu Patlu ki Jodi">
-                    <h3>Motu Patlu ki Jodi</h3>
-                </div>
-            </div>
-        </div>
-        <button onclick="const moreMobile = document.getElementById('mobile-more-games'); const btnMobile = this; if (moreMobile.style.display === 'block') { moreMobile.style.display = 'none'; btnMobile.textContent = 'Show More'; } else { moreMobile.style.display = 'block'; btnMobile.textContent = 'Show Less'; }">Show More</button>
-    </section>
-
-    <section class="section">
-        <h2>Additional Game Projects</h2>
-        <p class="section-intro">Earlier Unity projects across simulator, vehicle, action, animal, and dinosaur game categories.</p>
-        <div class="game-grid">
-            <div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.gamaxidc.flyingtruckpilotdriving3d')">
-                <img src="Images/flying-truck.png" alt="Flying Truck Pilot Driving 3D">
-                <h3>Flying Truck Pilot Driving 3D</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.gamaxidc.CarsCombatWarzone')">
-                <img src="Images/cars-combat.png" alt="Cars Combat Warzone">
-                <h3>Cars Combat Warzone</h3>
-            </div>
-            <div class="game-card clickable" onclick="window.open('https://apkpure.com/4x4-off-road-monster-truck/com.glulengames.mountainoffroadmonstertruck#google_vignette')">
-                <img src="Images/monster-truck.png" alt="4x4 Off Road Monster Truck">
-                <h3>4x4 Off Road Monster Truck</h3>
-            </div>
-        </div>
-        <div id="additional-more-games" style="display: none;">
-            <div class="game-grid">
-                <div class="game-card clickable" onclick="window.open('https://apkpure.com/monster-truck-mountain-rider/com.secure3dstudio.monstertruckhillclimbsimulator')">
-                    <img src="Images/monster-truck-hill.png" alt="Monster Truck Mountain Rider">
-                    <h3>Monster Truck Mountain Rider</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://apkpure.com/wolf-quest-simulator-game/com.glulengames.wolfquestsimulatorgame')">
-                    <img src="Images/wolf-quest.png" alt="Wolf Quest Simulator game">
-                    <h3>Wolf Quest Simulator game</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://apkpure.com/wild-hunter-dino-simulatorgame/com.secure3dstudio.extremewildtrex')">
-                    <img src="Images/dino-trex.png" alt="Wild hunter Dino simulatorgame">
-                    <h3>Wild hunter Dino simulatorgame</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://apkpure.com/forest-wild-life-simulator-3d/com.gamaxgames.forestwildlifesimulator3d')">
-                    <img src="Images/forest-wild.png" alt="Forest Wild Life Simulator 3D">
-                    <h3>Forest Wild Life Simulator 3D</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://apkpure.com/dino-grand-city-simulator/com.glulengames.dinograndcitysimulator')">
-                    <img src="Images/dino-city.png" alt="Dino Grand City Simulator">
-                    <h3>Dino Grand City Simulator</h3>
-                </div>
-                <div class="game-card clickable" onclick="window.open('https://apkpure.com/lion-quest-simulator/com.glulengames.lionquestsimulator')">
-                    <img src="Images/lion-quest.png" alt="Lion Quest Simulator">
-                    <h3>Lion Quest Simulator</h3>
-                </div>
-            </div>
-        </div>
-        <button onclick="const moreAdditional = document.getElementById('additional-more-games'); const btnAdditional = this; if (moreAdditional.style.display === 'block') { moreAdditional.style.display = 'none'; btnAdditional.textContent = 'Show More'; } else { moreAdditional.style.display = 'block'; btnAdditional.textContent = 'Show Less'; }">Show More</button>
-    </section>
-
-    <section class="section">
-        <h2>Contact</h2>
-        <div class="contact-box">
-            <p>Email: <a href="mailto:ruchir.k.darji@gmail.com">ruchir.k.darji@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ruchir-darji" target="_blank">linkedin.com/in/ruchir-darji</a></p>
-            <p>GitHub: <a href="https://github.com/wrooom68" target="_blank">github.com/wrooom68</a></p>
-        </div>
-    </section>
+    <section class="section"><h2>Additional XR / AR / VR Work</h2><div class="game-grid"><div class="game-card clickable" onclick="window.open('https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj')"><img src="Images/wurth-hr.gif" alt="Wurth HR VR"><h3>Wurth - HR VR</h3></div><div class="game-card clickable" onclick="window.open('https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj')"><img src="Images/ar-welten.png" alt="AR Welten"><h3>AR Welten</h3></div><div class="game-card clickable" onclick="window.open('https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj')"><img src="Images/hikar-vr.gif" alt="Hikar VR"><h3>Hikar VR</h3></div></div><div id="avm-more-games" style="display: none;"><div class="game-grid"><div class="game-card clickable" onclick="window.open('https://www.youtube.com/playlist?list=PLaTxfzYTfH0pTQE21YcnxW4sc1jlJMnKj')"><img src="Images/wurth-museum.png" alt="Wurth Museum AR"><h3>Wurth Museum AR</h3></div></div></div><button onclick="const more4 = document.getElementById('avm-more-games'); const btn4 = this; if (more4.style.display === 'block') { more4.style.display = 'none'; btn4.textContent = 'Show More'; } else { more4.style.display = 'block'; btn4.textContent = 'Show Less'; }">Show More</button></section>
+    <section class="section"><h2>Selected Mobile & Educational Games</h2><p class="section-intro">A sample of mobile, educational, puzzle, and casual games developed or maintained using Unity.</p><div class="game-grid"><div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.disney.frozensaga_goo')"><img src="Images/frozen.png" alt="Disney Frozen Free Fall Games"><h3>Disney Frozen Free Fall Games</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/stepappkids/com.eduisfun.stepappkids')"><img src="Images/stepapp-kids.png" alt="STEPappKids"><h3>STEPappKids</h3></div><div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.EduIsFun.EduIsFun&hl=en')"><img src="Images/eduisfun.png" alt="Eduisfun"><h3>Eduisfun</h3></div><div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.mobicloud.ludoraja')"><img src="Images/ludo-raja.png" alt="Ludo Raja"><h3>Ludo Raja</h3></div><div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.mobicloud.worldcricket2017')"><img src="Images/cricket.png" alt="World Cricket 2017"><h3>World Cricket 2017</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/chennai-express-official-game/com.Indiagames.ChennaiExpressEscapeFromRameshwaram')"><img src="Images/chennai.png" alt="Chennai Express Official Game"><h3>Chennai Express Official Game</h3></div></div><div id="mobile-more-games" style="display: none;"><div class="game-grid"><div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.MobicloudTechnologies.FishWorld')"><img src="Images/fish-world.png" alt="Fish world"><h3>Fish world</h3></div><div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.disney.thoughtbubbles_goo')"><img src="Images/inside-out.png" alt="Inside Out"><h3>Inside Out Bubbles</h3></div><div class="game-card clickable" onclick="window.open('https://play.unity.com/en/games/0a60936a-f0f2-4bf4-923d-5fde2cb657c3/spelling-shooter')"><img src="Images/spelling-shooter.png" alt="Spelling Shooter"><h3>Spelling Shooter</h3></div><div class="game-card clickable" onclick="window.open('https://greenythegreat.com/greeny-game/')"><img src="Images/greeny.png" alt="Greeny-The Great"><h3>Greeny-The Great</h3></div><div class="game-card clickable" onclick="window.open('https://play.unity.com/en/games/91999377-dae8-47a0-a8a1-6ee9d41ac9e3/just-hunting')"><img src="Images/just-hunting.png" alt="Just Hunting"><h3>Just Hunting</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/motu-patlu-ki-jodi/com.nazara.talkingpixels.motupatludash')"><img src="Images/motu-patlu.png" alt="Motu Patlu ki Jodi"><h3>Motu Patlu ki Jodi</h3></div></div></div><button onclick="const moreMobile = document.getElementById('mobile-more-games'); const btnMobile = this; if (moreMobile.style.display === 'block') { moreMobile.style.display = 'none'; btnMobile.textContent = 'Show More'; } else { moreMobile.style.display = 'block'; btnMobile.textContent = 'Show Less'; }">Show More</button></section>
+    <section class="section"><h2>Additional Game Projects</h2><p class="section-intro">Earlier Unity projects across simulator, vehicle, action, animal, and dinosaur game categories.</p><div class="game-grid"><div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.gamaxidc.flyingtruckpilotdriving3d')"><img src="Images/flying-truck.png" alt="Flying Truck Pilot Driving 3D"><h3>Flying Truck Pilot Driving 3D</h3></div><div class="game-card clickable" onclick="window.open('https://play.google.com/store/apps/details?id=com.gamaxidc.CarsCombatWarzone')"><img src="Images/cars-combat.png" alt="Cars Combat Warzone"><h3>Cars Combat Warzone</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/4x4-off-road-monster-truck/com.glulengames.mountainoffroadmonstertruck#google_vignette')"><img src="Images/monster-truck.png" alt="4x4 Off Road Monster Truck"><h3>4x4 Off Road Monster Truck</h3></div></div><div id="additional-more-games" style="display: none;"><div class="game-grid"><div class="game-card clickable" onclick="window.open('https://apkpure.com/monster-truck-mountain-rider/com.secure3dstudio.monstertruckhillclimbsimulator')"><img src="Images/monster-truck-hill.png" alt="Monster Truck Mountain Rider"><h3>Monster Truck Mountain Rider</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/wolf-quest-simulator-game/com.glulengames.wolfquestsimulatorgame')"><img src="Images/wolf-quest.png" alt="Wolf Quest Simulator game"><h3>Wolf Quest Simulator game</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/wild-hunter-dino-simulatorgame/com.secure3dstudio.extremewildtrex')"><img src="Images/dino-trex.png" alt="Wild hunter Dino simulatorgame"><h3>Wild hunter Dino simulatorgame</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/forest-wild-life-simulator-3d/com.gamaxgames.forestwildlifesimulator3d')"><img src="Images/forest-wild.png" alt="Forest Wild Life Simulator 3D"><h3>Forest Wild Life Simulator 3D</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/dino-grand-city-simulator/com.glulengames.dinograndcitysimulator')"><img src="Images/dino-city.png" alt="Dino Grand City Simulator"><h3>Dino Grand City Simulator</h3></div><div class="game-card clickable" onclick="window.open('https://apkpure.com/lion-quest-simulator/com.glulengames.lionquestsimulator')"><img src="Images/lion-quest.png" alt="Lion Quest Simulator"><h3>Lion Quest Simulator</h3></div></div></div><button onclick="const moreAdditional = document.getElementById('additional-more-games'); const btnAdditional = this; if (moreAdditional.style.display === 'block') { moreAdditional.style.display = 'none'; btnAdditional.textContent = 'Show More'; } else { moreAdditional.style.display = 'block'; btnAdditional.textContent = 'Show Less'; }">Show More</button></section>
+    <section class="section"><h2>Contact</h2><div class="contact-box"><p>Email: <a href="mailto:ruchir.k.darji@gmail.com">ruchir.k.darji@gmail.com</a></p><p>LinkedIn: <a href="https://www.linkedin.com/in/ruchir-darji" target="_blank">linkedin.com/in/ruchir-darji</a></p><p>GitHub: <a href="https://github.com/wrooom68" target="_blank">github.com/wrooom68</a></p></div></section>
 </body>
 
 </html>
